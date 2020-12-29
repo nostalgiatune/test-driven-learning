@@ -1,0 +1,5 @@
+mutation testNewBook($name: String!, $authorId: Int!) {
+    newBook(name: $name, authorId: $authorId) {
+        id
+    }
+}

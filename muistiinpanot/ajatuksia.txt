@@ -1,0 +1,39 @@
+- Ajatuksia:
+	- Ohjelmistotuotanto:
+		- Ohjelmistokehitykseen liittyy aina epävarmuutta, vain muutos on pysyvää
+		- Paradoksi: Isoimmat päätökset tehdään, kun tietoa on vähiten saatavilla
+	- Järjestelmä:
+		- Organisaation suunnittelemat järjestelmät heijastavat organisaation kommunikaatiorakenteita (conwayn laki)
+	- Arkkitehtuuri:
+		- Rakentaa kapasiteettia muutokselle, ollen kommunikaation ja konsensuksen väline
+	- Abstraktiot:
+		- Piilottaa miten tehdään, kertoo mitä tehdään, ja kohdistaa kehittäjien työt
+	- Rajapinnat:
+		- Verrattavissa juridisesti sitoviin sopimuksiin
+	- Agile:
+		- Vastaa ennaltasuunnitelun vaikeuteen korostamalla muutostenhallintaa nopeilla iteraatioilla
+		- Kukaan ei halua lentää ketterästi suunnitellulla lentokoneella
+	- DevOps:
+		- Automatisoi ohjelmistokehityksen koko elinkaarimalli
+		- Kohtele infrastruktuuria kuin karjaa, ei kuten lemmikkejä
+	- Laadunvarmistus:
+		- Laatuajattelun on oltava läsnä myös testausvaiheen ulkopuolella
+		- Sisäinen laatu on pitkän tähtäimen sijoitus
+		- Testivetoinen kehitys kasvataa sisäistä laatua
+	- Refaktorointi:
+	    - Suurin koodipohjan sisäistä laatua muovaava ja ylläpitävä voima
+		- Ainoa työkalu koodimädän ehkäisemiseksi
+		- Edellyttää kattavan yksikkötestisetin regressioiden välttämiseksi
+	- Tietoturva:
+		- Secure by Design: Tietoturva ei ole kerros vaan prosessi
+		- Tiivistefunktiot ovat kryptografian työjuhta
+	- Johtaminen:
+		- Tekninen päällikkö johtaa inspiroimalla, arkkitehti johtaa rakentamalla konsensusta
+		- On olemassa norsunluutorni- ja ruohonjuuritason arkkitehteja
+		- Itsensä johtaminen on itsensä haastamista ja mukavuusalueelta poistumista
+		- Muutos vaatii työtä: Liikkeelle lähteminen kuluttaa enemmän energiaa kuin liikkeessä pysyminen
+	- Konsultointi:
+		- Ei saa nojata tiimiin, vaan on otettava palloa
+		- Ei riitä sanoa "miten", vaan perusteltava "miksi"
+		- On osattava sanoa "en tiedä, mutta selvitän"
+		- Asiakkaalla voi olla yllättäviä tulokulmia

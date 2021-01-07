@@ -1,0 +1,49 @@
+- Tietokantamigraatiot:
+
+	tietokantamigraatio vastaa kysymyksiin:
+	- mikä on tietokannan tila tietyssä ympäristössä
+	- onko tietty skripti jo ajettu
+	- onko hotfixit ajettu lokaaleihin ympäristöihin
+	- kuinka perustaa uusi kanta tiettyyn tilaa
+		
+	migraatiotyökalu mahdollistaa:
+	- tietokannan perustamisen alusta
+	- keskitetyn versionhallinnan skeemoille
+	- toistettavuuden
+	- tietokantamuutosten automatisoinnin
+	- henkilökohtaiset tietokannat
+	
+	oikea lähestymistapa migraatioihin:
+	- inkremantaalinen ajattelutapa (ei päivitetä edellisiä migraatioskriptejä, paitsi toistettavia)
+	- versioidut migraatiot, jotka suoritetaan vain kerran ja skipataan tulevaisuudessa
+	- hotfixit suoraan tuotantoon ja sitten skripteihin (repair-komento)
+	- rollback-toiminto
+	- Osa CI-putkea
+	
+	flyway-migraatiotyökalu:
+	- kattava dokumentaatio
+	- integroituvuus olemassaolevaan kantaan
+	- tuki useimmille relaatiokannoille
+	- monipuolinen konfiguroitavuus
+	- tukee SQL- ja java-pohjaista migraatiota
+	- voidaan käynnistää: komentorivilta, Java-apista, maven/gradle pluginista, spring boot
+	
+		SQL-pohjainen migraatio:
+		- flyway lukee skriptit sijainnista classpath:db/migration (konventio)
+		- skriptien nimeäminen muotoa V_X_X__nimi.sql tai R_X_X__nimi.sql (toistettava)
+		- tukee placeholderaita (abstrahoi ympäristön)
+		- pitää kirjanpitotaulua kannassa
+		
+		Java-pohjainen migraatio:
+		- hyödyllinen datan dynaamiseen datan manipulointiin ja LOBien käsittelyyn
+		- luokkinen nimeäminen muotoa V_X_X__nimi.java tai R_X_X__nimi.java (toistettava)
+		- hookit: JavaMigration, callbacks
+		- toteutettava JavaMigration -rajapinta tai BaseJavaMigration -kantaluokka (suositeltu)
+		- event callbackit
+		- käytettävissä tietokanta-apin tarjoamat palvelut ja java-kieli
+
+		Spring boot -integraatio:
+		- flyway-core -riippuvuus
+		- käyttää oletuksena sovelluskontekstin primääriä DataSourcea (voidaan ohittaa määrittelemällä yhteystiedot)
+		- suorittaa migraation oletuksena joka käynnistyksellä !!!
+		- application.properties voi konfiguroidan flywayn

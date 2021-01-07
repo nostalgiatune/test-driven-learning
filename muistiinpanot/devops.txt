@@ -1,0 +1,38 @@
+- DevOps:
+
+	- Lakmustetsti: kehitysversio jatkuvassa tuotantoonvientivalmiudessa (CD)
+	- Maksimoidaan laatu ja julkaisuvauhti automaatiolla
+	- Kommunikaatio ja rajat ylittävä yhteistyö. T:n muotoinen osaaminen
+	- Agile- ja Lean -periaatteet
+	- Tiimin ketteryyttä lisäävä, siiloutumista vähentävä kulttuuri
+	
+	- Tukipilarit:
+	    - Pitkälle viety CI-putki
+		- Skriptattu infrastruktuurin hallinta (IaC)
+		- Sulava yhteistyö ja moniosaaminen
+	
+	- Sulauttaa organisaatiorakenteet:
+		- Sovelluskehitys (Development)
+		- Laadunvalvonta (QA)
+		- Ylläpito (Operations)
+
+	- Automatisoidaan työkaluin järjestelmän elinkaari:
+		- hallinnointi (manage)
+		- suunnittelu (plan)
+		- toteutus (build)
+		- testaus (verify)
+		- julkaisu (release)
+		- käyttöönotto (deploy)
+		- ylläpito (operate)
+		- seuranta (monitor)
+
+	- build-pipeline automaation keskiönä:
+		- Jatkuva integraatio (CI)
+		- Jatkuva tuotantoonvientivalmius (CD)
+		- Jatkuva palautesilmukka (CF)
+		
+	- Muutosvastarinta:
+		- Perustamiskustannukset
+		- Valmiusasteen seuranta
+		- Asiakaspaine
+		- Projektijohto

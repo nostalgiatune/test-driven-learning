@@ -1,0 +1,20 @@
+Perintä vs kooste:
+	Perintä:
+	- rajapinta mallintaa pysyvää tyyppiä - yksittäisen vastuualueen piirteitä (edustaa, is-a)
+	- ei voi lakata olemasta
+	- rajapinta on määritelmä tyypin luonteesta ja sopimus tyypin toteutumisesta
+	- luokka toteuttaa tyypin
+	- objekti (luokan ilmentymä) edustaa yhtä luokan toteuttamaa tyyppiä
+	- abstrakti luokka konkretisoi tyypin osittain (osa yksityiskohdista vaihtelee alityyppikohtaisesti)
+	- lähdekoodiriippuvuus/rajapintariippuvuus
+	- DRY
+	- luokkahierarkia
+	Kooste (komponentit):
+	- jäsenmuuttujat mallintavat vaihtelevia, yksittäisiä piirteitä (on ominaisuus, has-a)
+	- voi lakata olemasta
+	- piirteet on joukko yleiskäyttöisiä, monimuotoisia käyttäytymisiä (rajapintoja)
+	- ehdollinen soritus korvattavissa piirteillä?
+	- strategy?
+	- monimuotoisuus
+	- boilerplate-koodia (ohjauslogiikka)
+	- rajapintahierarkia

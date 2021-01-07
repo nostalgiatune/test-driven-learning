@@ -1,0 +1,29 @@
+- Vaatimuselisitaation ohjenuorat:
+	- haastattele laaja-alaista kohderyhmää
+	- arvioi toteutettavan järjestelmän soveltuvuus liiketoimintaan
+	- tunnista määrittelyvastuussa olevat avainhenkilöt ja asemat
+	- tunnista tekninen toimintaympäristö ja sidosryhmät
+	- tunnista vaatimukset:
+		- käyttötapaukset (toiminnalliset vaatimukset)
+		- laatuvaatimukset (ei-toiminnalliset vaatimukset)
+		- suunnittelurajoitteet (legacy-järjestelmät yms.)
+	- tunnista perustelut ja oletukset vaatimuksille
+	- tunnista epäselvät vaatimukset prototyyppikandidaateiksi
+	- tunnista ristiriidat
+	- johdata haastattelua käyttötapausvetoisesti
+	- sopikaa hyväksyntäkriteerit
+	- sopikaa priorisointi
+	- kysy avoimia kysymyksiä
+	- kirjoita sanastoa
+	- visualisoi
+	
+	agile:
+	- käyttötapaukset kuvataan asiakkaan kirjoittamissa käyttäjätarinoissa:
+		- nimi
+		- hyväksymistestitunniste
+		- prioriteetti
+		- tarinapisteet
+		- kuvaus
+	- hyväksyntäkriteerit kuvataan asiakkaan kirjoittamissa hyväksymistesteissä:
+		- yhteen käyttäjätarinaan liittyy vähintään yksi testitapaus
+		- hyväksymistestit on yhdistettävissä käyttäjätarinaan

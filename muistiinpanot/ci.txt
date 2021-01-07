@@ -1,0 +1,52 @@
+- CI/CD & DevOps:
+
+  - koosta (build):
+		- staattinen analyysi (koodin laatu)
+		- yksikkötestit
+		- riippuvuudet (pakettivarasto)
+		- käännös ja paketointi (koontiskripti)
+		- asennus testiympäristöön
+		- integraatiotestit
+		- käyttöliittymätestit
+		- rajapintatestit
+		- läpimenotestit (E2E)
+		- suorituskykytestit
+		- kuormitustestit
+		- haavoittuvuustestit
+		- koodikatselmointi
+		- sovelluskatselmointi
+		- virheiden raportointi (merge request)
+		
+  - testaa (test):
+        - sisäinen manuaalitestaus / savutestaus
+		- virheiden raportointi ja korjaus (virhetiketit)
+		- paketin välitys hyväksyntävaiheeseen (jos RC)
+		- julkaisukandidaatti pakettivarastoon
+		- ympäristön valmistelu ja rauhoitus
+		- asennusluvan odottaminen
+		- asennus asiakkaan testiympäristöhin (staging)
+		- hyväksymistestaus (UAT) / auditointi
+		- paketin välitys julkaisuvaiheeseen (manuaalinen)
+		- dokumentointi
+		
+  - luovuta (release):
+		- promootio julkaisuversioksi
+		- julkaisuversio pakettivarastoon
+		- release notes
+		- luovutus asennusvaiheeseen (manuaalinen)
+		- dokumentointi
+		
+  - asenna (deploy):
+		- ympäristön valmistelu
+		- sovelluksen konfigurointi (ympäristömuuttujat)
+		- asennus tuotantoon
+		- rollback-valmius
+		- dokumentointi
+		
+  - hallinnoi (manage):
+		- luovutusten dokumentointi
+		- versioasennusten dokumentointi
+		
+- Continuous Deployment:
+	- Ei hyväksymistestausvaihetta
+	- Tulikoe tuotannossa

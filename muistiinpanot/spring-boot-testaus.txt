@@ -1,0 +1,75 @@
+Spring boot testaus:
+
+	TDD-silmukka:
+		- toteuta minimaalinen testi
+		- tee minimitoteutus, jotta testi menee läpi
+		- refaktoroi toteutus
+
+	spring-boot-starter-test:
+		- spring-boot-test
+		- spring-boot-test-autoconfigure
+		- JUnit 5
+		- Mockito
+		- AssertJ
+		- JSONassert
+		- JsonPath
+		- Hamcrest
+		- Spring Test & Spring Boot Test
+
+	Integraatiotestaus Springillä:
+		Runner:
+		- @SpringBootTest(webEnvironment)
+		- ei tarvitse erikseen @ExtendWith
+	
+	Yksikkötestaus mockitolla:
+		Runner:
+		- @ExtendWith(MockitoExtension.class)
+		
+		Mockit:
+		- @Mock
+		- @Spy
+		
+		DI:
+		- @InjectMocks
+	
+	Yksikkötestaus Springillä:
+		Runner:
+		- @ExtendWith(SpringExtension.class)
+		
+		Testislaissit (importtaa autokonfiguraatiot):
+		- @WebMvcTest(controller)
+		- @DataJpaTest
+		- @JsonTest
+		- @WebFluxTest
+		- @DataCassandraTest
+		- @JdbcTest
+		- @DataJdbcTest
+		- @DataR2dbcTest
+		- @JooqTest
+		- @DataMongoTest
+		- @DataNeo4jTest
+		- @DataRedisTest
+		- @DataLdapTest
+		- @RestClientTest
+		- @WebServiceClientTest
+		
+		Mockit (beaneja):
+		- @MockBean
+		- @SpyBean
+		
+		DI:
+		- @Autowired
+	
+		Autokonfiguraatiot:
+		- @AutoConfigureMockMvc
+		- @AutoConfigureWebTestClient
+		- @AutoConfigureMetrics
+		- @AutoConfigureTestDatabase
+		- @AutoConfigureRestDocs
+		
+		Hyödyllisiä:
+		- @LocalServerPort
+		- @TestExecutionListeners(MockitoTestExecutionListener.class)
+		- @TestConfiguration (staattinen sisäluokka, kustomoi ensisijainen konfiguraatio)
+		- excludeAutoConfiguration
+		- TestRestTemplate

@@ -1,0 +1,102 @@
+Clojure:
+	- Programming to abstractions: It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.
+	- Lisp-murre
+	- Yhdenmukainen syntaksi (ohjelman suoritus sisäkkäisinä listarakenteina)
+	- REPL driven development
+	- Funktionaalinen kieli:
+		- Muuttumattomat tietorakenteet
+		- 1. luokan funktiot
+		- Viittauksellinen läpinäkyvyys
+		- Ei muuttujia
+		- Rekursio
+	- Formit (muotoa (operation operand1 operand2 ...)):
+		- Funktiokutsut
+		- Erikoisformit (syntaktiset avainsanat)
+		- Literaalit
+	- Totuusarvot:
+		- Falsey (nil, false)
+		- or: palauttaa 1. Truthy-arvon tai viimeisen Falsey-arvon
+		- and: palauttaa 1. Falsey-arvon tai viimeisen Truthy-arvon
+	- Erikoisformit (sijoitus- ja kontrollirakenteet):
+		- if: evaluoi ja palauttaa ensimmäisen tai toisen formin
+		- when: evaluoi ja palauttaa yhden formin tai palauttaa nil
+		- def: määrittelee globaalin arvon
+		- let: määrittelee lokaalin arvon
+		- defn: määrittelee nimetyn funktion
+		- fn: määrittelee anonyymin funktion
+	- Tietorakenteet:
+		- Numerot
+		- Merkkijonot/merkit
+		- Vector
+		- List
+		- Set
+		- Map
+		- Keyword
+	- Funktioparametrit:
+		- Ylikuormitus (arity overloading)
+		- Destructuring
+	- sequence abstraction (first, rest, cons):
+		- map transforms the FIRST element of the list AND then calls ITSELF again on the REST of the list until it reaches the END
+		- seq -funktio
+	- Polymorfismi (dispatch):
+		- interfaces (platform-specific)
+		- protocols (platform-agnostic)
+	- Sekvenssioperaatiot:
+		- map
+		- reduce (map, filter, some)
+		- take-while (take)
+		- drop-while (drop)
+		- filter
+		- some
+		- sort-by (sort)
+		- concat
+	- Kokoelmaoperaatiot:
+		- into
+		- conj
+	- lazy seqs:
+		- lazy-seq -funktio
+		- repeat/repeatedly -funktiot
+		- chunk optimatizion
+		- realize only once
+	- Rekursio:
+		- Base-case (pohjatapaus)
+		- Accumulator (kertymäarvo)
+		- First (pää)
+		- Rest (häntä)
+		- Cons (rakentaja)
+		- Häntärekursio
+		- recur -operaatio (suorituskyky)
+	- Kompositiofunktiot:
+		- partial
+		- apply
+		- complement
+		- comp
+		- memoize
+	- Metaohjelmointi:
+		- Itseään muovaava koodi (AST tai syntaksi)
+		- Koodi on dataa (homoikonisuus):
+			- S-expression: Sisäkkäisiä listoja (muodostaa puu-rakenteen)
+			- Koodilla on sama rakenne kuin kielen alkeistietorakenteella (code as data)
+			- Kaikki mitä koodi voi tehdä tietorakenteelle, makrot voivat tehdä koodille
+			- Lisp-koodin rakenne vastaa Lisp-kielen listarakennetta
+			- Makrot ovat Lisp-kielen täysivaltaisia funktioita (turing-täydellisiä)
+		- Tulkki:
+			- 1. Reader (Muodostaa AST:n (listarakenteen) syötteestä (listarakennetta kuvaavasta merkkijonosta))
+			- 2. Macro expander (Manipuloi AST:tä)
+			- 3. Evaluator (Evaluoi AST:n, suorittaa operaation ja palauttaa tuloksen)
+			- read-string ja eval
+			- reader macrot
+		- Makrot:
+			- Koodin suorittama transformaatio koodille
+			- Mahdollistaa syntaksin kustomoinnin (Syntactic Abstraction)
+			- Syötteitä ei evaluoida (symbolit, operandit)
+			- Paluuarvo evaluoidaan
+			- Symbolien Quotaus:
+				- ' (quote)
+				- ` (syntax quote)
+				- ~ (unquote)
+				- ~@ (unquote splicing)
+			- Sudenkuopat:
+				- variable capture (let -> auto gensym#)
+				- double evaluation
+				- nested macros

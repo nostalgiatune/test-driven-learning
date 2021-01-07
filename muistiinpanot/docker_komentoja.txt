@@ -1,0 +1,37 @@
+Docker:
+    Dockerfile:
+	- FROM (AS) (base image)
+	- USER (vaihda käyttäjää)
+	- WORKDIR (luo/vaihda työhakemisto)
+	- COPY (--from) (kopioi tiedostoja)
+	- RUN (suorita shell-komento)
+	- EXPOSE (dokumentoi portit)
+	- VOLUME (volumet)
+	- ENTRYPOINT (prosessi)
+	- CMD (ylikirjoitettavat argumentit)
+	
+	Docker CLI:
+	- build (rakenna kontti)
+	- run (suorita kontti)
+	- ps (kontit)
+	- port (portit)
+	- rm (poista kontti)
+	- logs (lokit)
+	- rmi (poista image)
+	- attach (liitä terminaali)
+	- cp (kopioi tiedostoja)
+	- create (luo kontti)
+	- start (käynnistä kontti)
+	- exec (suorita komento kontissa)
+	- images (tarkastele imageja)
+	- import/export (tuo/vie kontteja)
+	- load/save (tuo/vie imageja)
+	- pull/push (hae/vie image registryyn)
+	- ... TODO
+	
+	
+	Docker-compose:
+	- TODO
+	
+	Käytännöt:
+	- build-kontti

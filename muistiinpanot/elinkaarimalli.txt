@@ -1,0 +1,48 @@
+- prosessinhallinan elinkaarimalli (stepit + tuotokset):
+    - Vaatimusanalyysi / elisitaatio (kenelle tehdään):
+	    - Palaverimuistio
+		- Käyttäjätarinat
+		- Hyväksymistestit
+	- Vaatimusmäärittely / vaatimusanalyysi (miksi tehdään):
+		- Asiakasvaatimukset
+	- Toiminnallinen määrittely (mitä tehdään):
+		- Määrittelydokumentti (speksi)
+	- Tekninen määrittely / arkkitehtuurisuunnittelu (miten tehdään):
+		- Arkkitehtuurikuvaus
+		- Toteutussuunnitelma
+		- Työmääräarviot
+	- Hyväksyntävaihe (tehdäänkö oikein):
+		- Toteutuslupa
+	- Toteutus:
+		- Lähdekoodi + dokumentaatio
+		- Kehitys- ja testeausympäristöt
+		- Automaatiotestit
+		- Sovelluspaketit
+	- Testaus:
+	    - Testaussuunnitelmat
+		- Testausraportit
+	- Luovutus:
+		- Asennusohjeet
+		- Määrittelymuutokset
+		- Julkaisutiedot (Release notes)
+		- Muutosloki (Changelog)
+	- Käyttöönotto:
+		- Versiodokumentti
+	- Ylläpito:
+		- Tuotantodata
+		- Statistiikka
+		- Sovelluslokit
+		- Tilastot ja raportit
+		- Tukipyynnöt
+		- Muutospyynnöt
+	- Muutostenhallinta:
+		- Tiketit
+		- AP:t
+		- Kokousmuistiot
+		- Kirjeenvaihdot
+		- Yhteenvedot
+		- Toteutussuunnitelmat
+		- Työmääräarviot
+		- Aikataulut
+		- Raportit
+		- Työskenetelydokumentit

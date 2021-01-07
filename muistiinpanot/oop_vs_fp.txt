@@ -1,0 +1,63 @@
+OOP vs FP:
+  OOP:
+  - Objects: bag of functions operating on data
+  - Encapsulate data and behavior (class) [SRP]
+  - Polymorphism (abstract runtime behavior) [DIP]
+  - Hide the state [Information Hiding, Decoupling]
+  - Reusable behavior
+  
+  - Mutable state -> hard concurrency
+  - Highly cohesive objects
+  - Easy to add types, hard to add procedures [OCP]
+  - Tyypitys:
+  - Testability:
+  - over-engineering?
+  
+  FP:
+  - Separate data (structures) and behavior (functions)
+  - Pure functions (abstract compile-time behavior)
+  - Referential transparency [Decoupling]
+  - Reusable functions
+  - Immutable state -> easy concurrency
+  - Highly cohesive functions
+  - Easy to add procedures, hard to add types
+  - Tyypitys:
+  - Testability:
+  
+  Yhteneväisyydet:
+  - Tiedon piilotus?
+  - Kulkee käsi kädessä
+  - Dataa käsittelevät funktiot
+  - Suunnitteluperiaatteet ja -mallit pätee
+  
+  Definitiiviset erot:
+  - Referential transparency (FP)
+  - Polymorphismi (OOP)
+  
+  Polymorfismi:
+  - Erottaa kutsujan lähdekoodin kutsuttavan komponentin toteutuksesta (ajonaikainen riippuvuus) f.o() (löyhästi sidottu plugin-arkkitehturi)
+  - Ei korvattavissa tyypin tutkivalla switchillä, koska on käännöksenaikainen riippuvuus toteutukseen f(o)
+  - Esim. liiketoimintalogiikan erottaminen esitystavasta tai tallennusmekanismista
+  - Robusti järjestelmä käyttää polyformismia moduulirajoilla rajapintojen avulla
+  - Reduktio: Funktiotkutsu, jossa kutsujan (caller) lähdekoodilla ei ole riippuvuutta kutsuttavan (callee) lähdekoodiin
+  
+	  Kasvattaa:
+	  - Testattavuutta testivastineilla
+	  - Moduulien riippumatonta muunneltavuutta
+	  - Asiakas- ja palvelumoduulin itsenäistä kehityssykliä
+	  - Koodipohjan hygieniaa testattavuuden/refaktoroitavuuden ansiosta
+	  
+	- Polymorfinen luokka voidaan toteuttaa perinnällä (inheritance) tai koosteella (composition):
+		- Perintä muodostaa vahvan käännöksenaikaisen riippuvuuden ja sidoksen kantaluokan toteutukseen
+		- Kooste ei muodosta käännöksenaikaista riippuvuutta toteutuksen sisältävään luokkaan (hyödyntää polymorfismia), mutta duplikoi delegaatiologiikan
+  
+  Referential transparency:
+  - Sama funktiokutsu samalla syötteellä tuottaa aina saman tuloksen f(a) == f(b) when a == b
+  - Funktioilla ei ole ulkopuolista riippuvuutta tai vaikutusta (side effect)
+  - Ei uudelleensijoitettavia muuttujia, rekursio
+  - Reduktio: Ei sallita uudelleensijoitusoperaatiota
+  
+	  Kasvattaa:
+	  - Rinnakkaisajettavuutta
+	  - Ennustettavuutta/ymmärrettävyyttä
+	  - Koodipohjan hygieniaa ennustettavuuden/ymmärrettävyyden ansiosta

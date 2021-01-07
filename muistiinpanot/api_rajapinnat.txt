@@ -1,0 +1,48 @@
+- API-rajapinnat:
+
+	- Synkroniset (orkestroidut):
+		- aikasidonnaisia (temporal coupling)
+	
+		- REST
+			- Perustuu:
+				- Resurssit (URI)
+				- Verbit (HTTP-metodi)
+				- hyperteksti (HATEOAS)
+				
+			- Vaatimukset:
+				- Yhtenäinen rajapinta (uniform interface)
+				- Asiakas-palvelin (client-server)
+				- Tilattomuus (stateless)
+				- Välimuisti (cacheable)
+				- Kerrosarkkitehtuuri (layered system)
+				- Code-on-demand (valinnainen)
+				
+			- HATEOAS tarjoaa sallitut tilasiirtymät
+			- Dokumentaatio
+			- Richardson maturity model
+			- Selaintuki (Ajax)
+			- HTTP-infrastruktuurin tuki
+			
+		- GraphQL
+			
+		- RPC:
+			- Objektit ja operaatiot
+			- Rajapintakuvaus
+			- Koodigenerointi
+			- Kattavat työkalut
+			- Toteutuksia:
+				- SOAP (XML)
+				- gRPC (binäärinen)
+				- RMI
+				- jne.
+				
+	- Asynkroniset (tapahtumapohjaiset):
+	
+		- aikaan sitomattomia (temporal uncoupling)
+	
+		- Tapahtumaohjattu arkkitehtuuri (EDA)
+		- Sanomajonot (MOM)
+		- Takaisinkutsu-API:t (one-way)
+		- WebSocket...
+		- Feeds...
+		- Enterprise Integration Patterns (EIP)

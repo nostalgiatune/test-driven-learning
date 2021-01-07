@@ -1,0 +1,11 @@
+- Peukalosäännöt:
+	- SOLID/GRASP
+	- DRY/KISS/YAGNI
+	- CIA
+	- 12F
+	- SWOT
+	- OODA
+	- INVEST
+	- POLA
+	- PoLP
+	- Tell, Don't Ask!

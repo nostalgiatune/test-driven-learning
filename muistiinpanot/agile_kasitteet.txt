@@ -1,0 +1,85 @@
+- Agile (sateenvarjotermi ketterille kehitysmalleille):
+
+	- Reagointi: Iteraatiot, inkrementit ja uudelleenpriorisointi
+	- Kommunikointi: Avoin viestintä ja jatkuva palaute
+	
+	- Agile manifesto...
+	
+	- Scrum (työnohjausmenetelmä):
+	
+		- Kärätään ja integroidaan asiakaspalautetta nopeilla oppimissilmukoilla
+		- Tuotetaan julkaisukelpoisia tuoteinkrementtejä jatkuvalla kadenssilla empiirisen palautteen ohjaamana
+
+		- Itseorganisoituva Scrum-tiimi:
+			- Scrum Master (palveleva johtaja)
+			- Product Owner (tuoteomistaja)
+			- Kehitystiimi (kollektiivisesti vastuullinen)
+			
+		- Säännölliset seremoniat:
+			- Daily (tilannekatsaus)
+			- Spring Planning (suunnittelupalaveri)
+			- Spring Review (esittelytilaisuus)
+			- Retro (yleiskatsaus)
+			- Backlog Refinement (kehitysjonon työstö)
+		
+		- Käsitteet:
+			- Sprint (iteraatio)
+			- Iteration Zero (nollasprintti)
+			- User Story (käyttäjätarina)
+			- Product Backlog (kehitysjono)
+			- Spring Backlog (tehtävälista)
+			- Product Increment (tuoteinkrementti)
+			- Epic (epikki)
+			- Subtask (alitehtävä)
+			- Dot voting (pisteäänestys)
+			- Story Point (tarinapiste)
+			- Planning Poker (suunnittelupokeri)
+			- Definition of Done (valmiin määritelmä)
+			- Velocity (vauhti)
+			- Burdown Chart (edistymiskäyrä)
+			- Timebox (aikaraja)
+			
+	- Lean (tuotannonohjauksen menetelmä):
+		- Think big, act small, fail fast, learn rapidly
+		- Tavoitellaan asiakkaille arvonlisäystä pienemmillä resursseilla
+		- Käsitteellinen viitekehys: arvot, periaatteet ja hyvät käytännöt
+		- Kaizen (Continuous Improvement): arvon tuottaminen, hukan poistaminen ja virtauksen parantaminen
+		- Lean-kehityksen periaatteet:
+			- Eliminoi hukka
+			- Vahvista oppimista
+			- Lykkää päätöksiä
+			- Toimita usein
+			- Voimaannuta tiimiä
+			- Sisäänrakenna laatu
+			- Optimoi kokonaisuus
+		- Eliminoidaan hukkaa (tuottamattomuutta):
+			- Osittain tehty työ
+			- Lisäominaisuudet
+			- Uudelleenopettelu
+			- Tehtävänvaihto
+			- Odotus
+			- Defektit
+			- Hallinnolliset toimet
+			- Väärä toiminnallisuus/tuote
+			- Kehitysjonon hallitsemattomuus
+			- Uudelleentyöstö
+			- Turha monimutkaisuus
+			- Kognitiivinen kuormitus
+			- Uupumus
+			- Kyvykkyyden katoaminen
+			- Tehoton viestintä
+		- Value Stream Mapping -tekniikalla voidaan tunnistaa hukka
+		- Kanban: imuohjaus (just-in-time)
+
+			
+- Fasilitointi:
+	- agenda
+	- hedelmällisyys
+	- puolueettomuus
+	- avoimuus
+	- rakentavuus
+	- kannustus
+	- pelisäännöt
+	- rytmitys ja jatkotoimet
+	- muistiinpanot
+	- fasilisaattori ei omista aihetta vaan prosessin

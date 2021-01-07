@@ -1,0 +1,13 @@
+- Järjestelmäarkkitehtuurien dikotomia:
+	
+	- Monoliittinen arkkitehtuuri:
+		- Skaalautuu huonosti
+		- Helpommin hallittava elinkaarimalli
+		- Ei vaadi erityistä DevOps-automatiikkaa
+		- Taipumus mädäntyä (code rot / big ball of mud) 
+			
+	- Hajautettu arkkitehtuuri:
+		- Skaalautuu hyvin
+		- Vaikeammin hallittava elinkaarimalli
+		- Vaatii edistynyttä DevOps-automatiikkaa
+		- Toteutus säilyy tuoreempana

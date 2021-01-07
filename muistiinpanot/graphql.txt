@@ -1,0 +1,95 @@
+GraphQL (spesifikaatio):
+
+  REST:
+  - tilattomat palvelut ja rakenteellinen pääsy resursseihin (CRUD)
+  - backends for frontends (BFF)
+  - suorituskykyongelmat (underfetching/overfetching)
+  - BFF-malli skaalautuu huonosti
+
+  Periaate:
+  - Deklaratiivinen kyselykieli API-rajapinnoille
+  - Rajapinta vastaa kyselyyn hienojakoisesti (kontra REST)
+  - yski RPC-endpoint (/graphql)
+  - Minimoi vajaa- (n+1) ja liikahakujen määrän (over- ja underfetching)
+  - Helposti muunneltava ja laajennettava (versioton rajapinta, hitaat deprekaatiot)
+  - Suoraviivaisempi monitorointi (resolverit)
+  - Skeema/tyyppijärjestelmä: tiimityöskentelyä ja koodausta ohajaava sopimus
+  - API-first
+  - Sisäänrakennettu itsetarkastelu (introspection)
+  
+  Protokolla:
+  - HTTP-transport (POST)
+  - application/json
+
+  Konseptit:
+  - skeemat (SDL)
+  - dataluokat (data class)
+  - resolverit (resolver)
+  - kyselyt (query)
+  - mutaatiot (mutation - lisäys, päivitys, poisto)
+  - tilaukset (subscription)
+  
+  SDL:
+	juurityypit (API:n sisääntulopisteet):
+    - Query
+	- Mutation
+	- Subscription
+  
+	parametrit:
+	- nimetyt parametrit
+	- oletusarvot
+	- input type
+	
+	tyypit:
+    - object type
+	- scalar type
+	- enum
+	- interface
+	- union
+  
+	tyyppimääritteet (type modifiers):
+    - list
+	- non-null
+  
+  Kyselykieli:
+  - heijastaa skeemaa
+  - named fragments
+  - inline fragments
+  - direktiivit (include, skip)
+  
+  Juurityypit (Root Types):
+  - Query
+  - Mutation
+  - Subscription
+  - CRUD-operaatiot eri entiteeteille määritetään juurityyppien alaisuuteen
+  
+  Käyttötapaukset:
+  - tietokanta-facade
+  - integraatio-facade (esim. legacy-järjestelmät)
+  - hybridi-facade
+  
+  Resolver-funktiot:
+  - query / mutaatio koostuu kentistä (fields)
+  - jokaiselle kentälle on vastaava resolver
+  - resolver hakee kenttää vastaavan datan
+  - resolver ottaa kentän sisältävän dataluokan argumenttina implisiittisesti
+  - resolverit suoritetaan rekursiivisesti kunnen kaikki arvot ovat skalaareja
+  - resolverit voivat olla asynkronisia, graphql suorittaa optimoitua rinnakkaisajoa
+  
+  Java-kirjastot (graphql-java-kickstart):
+  - graphql-spring-boot-starter
+  - graphiql-spring-boot-starter
+  - voyager-spring-boot-starter
+  - graphql-java-tools
+  - graphql-spring-boot-starter-test
+  
+  Virhekäsittely:
+  - palauttaa aina HTTP 200 OK
+  - json-kuormassa errors-osio
+  - GraphQLError-rajapinta
+  
+https://www.graphql-java-kickstart.com/tools/schema-definition/
+https://www.baeldung.com/spring-graphql
+https://www.howtographql.com/
+https://graphql.org/learn/
+https://dev.to/imphilippesimo/graphql-from-theory-to-real-world-with-spring-boot-3lpj

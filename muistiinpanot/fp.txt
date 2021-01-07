@@ -1,0 +1,53 @@
+- Funktionaalinen ohjelmointi (FP):
+	- Kielen puhtaus (purity)
+	- Lambda-kalkyyli:
+		- lausekkeiden sieventyminen (lambda)
+		- tilan muuttaminen (turing)
+	- Ydinperiaatteet:
+		- Ensimmäisen luokan funktiot (sulkeumat)
+		- Puhtaat funktiot (viittauksellinen läpinäkyvyys)
+		- Funktioiden yhdistely (kompositio)
+		- Algebralliset tietotyypit:
+			- Leikkaus (intersection)
+			- Yhdiste (union)
+		- Kompositiolla hallitaan monimutkaisuutta
+	- Funktiot:
+		- Funktiot suorittavat tyypeillä joukko-operaatioita
+		- Parametrisoivat tietorakenteet
+		- Parametrisoivat toiminnot (kompositio)
+		- Funktiotyyppi = rajapinta yhdellä metodilla
+		- Funktiot ottavat yhden parametrin
+	- Tyypitys:
+		- Union-tyypit
+		- Käytä staattisia tyyppejä liiketoiminnan oliomalliin
+		- Funktiosignatuurin täytyy huomioida poikkeukset:
+			- Supista parametrien tyyppiä
+			- Laajenna paluuarvon tyyppiä
+	- Partial application
+	- Kontinuaatiot (continuations)
+	- Monoid
+		- assosiatiivisuus, neutraalialkio
+		- Homomorphism
+		- Endomorphism (funtions)
+		- Yhdistetyt funktiot muodostavat monoidin
+	- Mondad:
+		- Rajapinta arvojen yhdistämiseen
+		- Monad laws:
+			- Associativity (assoatiivisuus) -> rinnakkaisuus
+			- Identity (neutraalialkio) -> lähtöarvo
+		- Monad is just a monoid in the category of endofunctors
+		- Kontinuaatioiden ketjuttaminen
+	- Bind:
+		- railway oriented programming (rop)
+		- let bind : <A,B,C> (A -> Either<B,C>) -> Either<A,C> -> Either<B,C> = switch -> either -> either right ? switch right : either left
+		- Monadic bind
+		- Task bind
+		- Error bind
+	- Functor:
+		- Tyyppi map-operaatiolla
+	- Map/reduce:
+		- Map types to monoids and fold the list
+	Discriminated unions (summatyyppi):
+		- Really shines in conjunction with pattern-matching, where you select different behavior depending on the cases
+		- But this pattern is fundamentally antithetical to pure OO principles
+		- The fundamental difference is that data and behavior is separate in functional programming, while data and behavior are encapsulated together in OO

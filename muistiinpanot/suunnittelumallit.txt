@@ -1,0 +1,130 @@
+GoF-suunnittelumallit:
+- EKT (abstract factory)
+- tehdasfunktio (factory method)
+- rakentaja (builder)
+- ainokainen (singleton)
+- prototyyppi (prototype)
+
+- sovitin (adapter)
+- kuorruttaja (decorator)
+- edustaja (proxy)
+- silta (bridge)
+- julkisivu (facade)
+- hiutale (flyweight)
+- rekursiokooste (composite)
+
+- yleisfunktio (template method)
+- strategia (strategy)
+- komento (command)
+- iteraattori (iterator)
+- tulkki (interpreter)
+- tarkkailija (observer)
+- vierailija (visitor)
+- välittäjä (mediator)
+- muisto (memento)
+- tila (state)
+- vastuuketju (chain of responsibility)
+
+-----------------------
+
+command (komento):
+- erottaa funktiokutsun luonnin sen suoritushetkestä, -paikasta ja suorittajasta 
+- OOP-vastine takaisinkutsulle tai sulkeumalle
+- hyödyllinen, kun samoja toimintoja voi syntyä eri lähteistä (esim. käyttäjä, AI)
+- hyödyllinen, kun samoja toimintoja halutaan uudelleenkäyttää eri luokilla 
+
+observer (tarkkailija):
+- tapahtumapohjainen: erottaa tapahtumat niiden seurauksista (synkronisesti)
+- poistaa rajapintariippuvuudet tiedon kulkusuuntaan päin
+- synkronisuus ja muistinvaraus voi tuottaa suorituskykyongelmia
+- hankala ymmärtää ja debugata (ajonaikainen rakenne)
+- soveltuu moduulien väliseen tiedonvaihtoon, ei sovellu moduulin sisäiseen logiikkaan
+- tarkkailijoiden poistologiikka toteutettava myös GC-kielissä  (Lapsed listener problem)
+
+flyweight (hiutale):
+- erottaa jaetut oliot niitä käyttävistä olioista
+- ulkoinen jaettu tila, ja sisäinen kontekstuaalinen tila
+- ulkoisen ja sisäisen tilan elinkaaret ovat erilliset
+- säästää muistia ja parantaa suorituskykyä
+
+prototype (prototyyppi):
+- luo kopioita oliosta identtisellä tilalla
+- vähentää tarvetta luoda konkreettisia tehdasluokkia
+- hankala, kun olio hyödyntää delegaatiota (deep copy)
+- vaihtoehtoja: geneerisyys jne.
+
+FSM (äärellinen automaatti):
+- rajoittaa luokan sallittuja tilasiirtymiä (tukee eheyttä)
+- sallitut tilasiirtymät on kuvattu tilasta tilaan -tasolla
+- nykyinen tila on tallennettu muuttujaan
+- mahdolliset tilat on kuvattu enum-rakenteena
+- sallitut tilasiirtymät on määritelty switch-rakenteeseen
+- riittävä, kun olion tiloihin ei liity tilakohtaisia muuttujia (looginen tila)
+
+state (tila)
+- äärellinen automaatti 2.0
+- nykyinen tila on tallennettu tila-olioon (delegaatti)
+- mahdolliset tilat on kuvattu tila-rajapinnan toteuttavina luokkina
+- sallitut tilasiirtymät on määritelty eri tila-luokkiin
+- vaaditaan, kun olion tiloihin liittyy tilakohtaisia muuttujia, esim. kulunut aika tilassa X (fyysinen tila)
+- tila-rajapinta määrittää enter- ja exit -funktiot, joissa on tilojen alustus- ja poistumislogiikka
+
+singelton (ainokainen):
+- varmistaa, että luokasta on vain yksi instanssi, ja tarjoaa globaalin pääsyn siihen
+- globaalin tilan ongelmat (ymmärrettävyys, rinnakkaisuus, riippuvuusmagneetti)
+- kaksi vastuuta: yksi instanssi, globaali pääsy (rikkoo SRP)
+- vaihtoehtoja: parametri, staattinen luokka, kantaluokka
+
+double buffer (kaksoispuskuri):
+- estää kirjoitettavan datan lukemisen keskeneräisenä (screen tearing)
+- kaksi puskuria: etupuskuri (luku) ja takapuskuri (kirjoitus)
+- etupuskuri tarjoaa eheää, mutta vanhaa dataa (ruudun takaista)
+- vaihdon jälkeen takapuskurissa on kahden ruudun takaista dataa
+- luokka kapseloi puskurit luku- ja kirjoitusrajapintaan
+- vaihdetaan puskurit päivityksen valmistuttua
+- vaihdon on oltava atominen, luku ja kirjoitus on estettävä sen aikana
+- vaihto voi tapahtua vaihtamalla osoittimia (page flipping) tai dataa kopioimalla
+- kolmella puskurilla saadaan lisää tehokkuutta (poistaa vaihdon odotusajan)
+- ongelma: actor voi reagoida tilamuutokseen samassa tai seuraavassa ruudussa, riippuen muuttuuko sen tila ennen vai jälkeen päivityksen (järjestysriippuvuus)
+- ratkaisu: kaksoispuskuroidaan tila, kaikki actorit reagoivat tilamuutokseen seuraavassa ruudussa (poistaa järjestysriippuvuuden)
+
+update method (päivitysmetodi):
+- kuvaus: simuloi itsenäisten objektien joukkoa edistämällä jokaisen tilaa ruutu kerallaan
+- millon: kun usea ajassa simuloitu objekti käyttäytyy itsenäisesti ja melko riippumattomasti
+- ongelma: oikeasta rinnakkaisuudesta seuraa helposti ristiriitatilanteita
+- ratkaisu: pelimaailma ylläpitää objektien kokoelmaa, ja päivittää sarjan objektikokoelman ruutu kerrallaan
+- seuraukset: poistaa rinnakkaisuusongelmat, mutta vaatii tarkkuutta
+- sunnittelu: päivitysrajapinta, järjestysriippuvuus, objektien lisäys ja poisto, ajan kulku, inaktiiviset objektit
+- liittyy: pelisilmukka, komponentti
+
+component (komponentti):
+- kuvaus: salli luokan sivuta useaa sovellusalaa ilman niiden välisiä riippuvuuksia
+- vertaus: komponentit ovat objektien yleiskäyttöisiä ja laajennettavia liitännäisiä
+- milloin: luokka sivuaa eri sovellusalojen toimintoja, perintä ei tarjoa riittäävää muunneltavuutta
+- ongelma: sovellusalojen itsenäisyys kärsii, luokkien ymmärrettävyys ja muunneltavuus heikkenee
+- ratkaisu: eristetään sovellusalat komponentteihin, pelkistetään luokka komponenttien säiliöksi
+- seuraukset: negatiivinen vaikutus monimutkaisuuteen (rakenne, kommunikointi, muistinhallinta) ja suorityskykyyn
+- suunnittelu: komponenttijako, järjestysriippuvuus, IoC, komponenttien välinen kommunikointi (jaettu tila, suorat riippuvuudet, viestitys)
+- liittyvää: ECS (entity-component system)
+- esim: ohjaus-, grafiikka-, fysiikka- ja äänikomponentit, joilla on kytkös sovellusalakohtaisiin luokkiin
+- luokan päivitysmetodi delegoi itsensä komponenttien päivitysmetodeille
+- luokka on kaikkien objektien kantaluokka
+
+type object (tyyppiobjekti):
+- kuvaus: tuota uusia "alityyppejä" ajonaikaisesti datasta vain *kahdella luokkamäärityksellä
+- milloin: tarvitaan laajennettava joukko erilaisia objekteja yhteisillä attribuuteilla, minimoiden koodin muutos- ja käännöstarpeet
+- ongelma: kovakoodatut luokkahierarkiat eivät jousta ja vaativat lähdekoodin uudelleenkäännöksen aliluokan muutoksessa tai lisäyksessä
+- ratkaisu: tyypitetty luokka (*1) delegoi tyyppiobjektille (*2). tyypitetty luokka edustaa uudelleenkäytettävää logiikkaa ja tyyppiobjekti invarianttia dataa
+- kompromissit: kirjanpitovastuu tyypeistä siirtyy kääntäjältä kehittäjälle, data-ohjatulla tyyppiobjektilla on vaikea ylikirjoittaa toiminnallisuutta (ilman tulkkia)
+- suunnittelu: muistinhallinta, prototyyppiperintä, tyyppijärjestelmän piilotus, tyypin vaihtuminen
+- pelaa yhteen skriptauskielen kanssa
+- liittyy: prototyyppi, hiutale, tila, tavukoodi, tulkki
+
+bytecode (tavukoodi/tulkki)
+- kuvaus: enkoodaa sovelluksen matalan tason toiminnot toiminnot konekieliseen käskykantaan (dataan)
+- milloin: tarvitaan lähdekoodiriippumatonta laajennettavuutta ja "modattavuutta" toiminnallisuuksille
+- ongelma: lähdekoodimuutokset ovat hitaita ja teknisiä, ja paljastavat liikaa järjestelmätoteutusta
+- ratkaisu: sisäänrakennetulla tulkilla voidaan suorittaa matalan tason operaatioita hiekkalaatikkoympäristössä
+- kompromissit: toteutettava käskykanta, tulkki ja komentokieli / frontend. vaikea debugata
+- sunnittelu: käskykannan laajuus, laskentamalli, tyypitys, kirjoitustyökalut
+- suositus: minimaalinen käskykanta, pinokone, merkityt tyypit (tagged union), graafinen editori

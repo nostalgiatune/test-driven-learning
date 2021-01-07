@@ -1,0 +1,81 @@
+- React sovelluskehitys:
+	- Kehitysympäristö (create-react-app)
+	- Komponenttikirjasto (blueprint)
+	- Projekti (feature-paketit)
+	- Modulaarisuus (komponentit)
+	- Kommunikointi (ohjeistus)
+	- Tyylit (CSS)
+	- Asettelut (purecss)
+	- Wrapperit (Layout)
+	- Parametrit (Prop)
+	- Lokaali tila (Hook)
+	- Tilanhallinta (Context, Redux, Recoil?)
+	- Reititys (react-router, history.push, link, useParams)
+	- Lomakkeiden hallinta (formik)
+	- Kielellisyys (react-intl)
+	- Saavutettavuus
+	- Suorituskyky (Code-splitting)
+	- Tilasiirtymät (HATEOAS)
+	- Validointiskeemat (Yup)
+	- Geneeriset komponentit (<T>)
+	- Virhekoodikäsittely
+	- Automaatiotestausvalmius (Id:t)
+	- Yksikkötestit (Jest)
+	- Käyttöesimerkit
+	- Koodauskäytännöt (ESLint)
+	- Vahva tyypitys (TypeScript)
+	
+	- Arkkitehtuuri:
+		- Rajapintakuvauksesta (OAS) generoidut API- ja Client -toteutukset (mustache?)
+		- API:
+			- nimiavaruudet (esim. asiakashallinta)
+			- luokkahierarkiat
+			- resurssit (esim. GET /asiakas/:tunniste)
+			- operaatiot (esim. POST /asiakas/hae)
+			- käyttäjäistunto (JSESSIONID)
+			- HATEOAS (sallitut toimenpiteet)
+			- Arkaluontoiset hakuparametrit POST:lla, ettei jää lokeille
+			- Tunnisteiden sotkenta (istuntoon sidottu guid)
+		- Validointi:
+			- Backend-vetoinen logiikka (API)
+			- Kanta-DTO:n sisältämä virhe-/huomautuslistaus
+			- Enumeroitu huomautustyyppi
+			- Kohdistettu tietomalliin JSON-pathilla
+			- Frontend ja backend käyttää
+			- Virheiden käsittely try/catch
+			- Huomautusten lisäys ladattavaan tietoon
+		- Backend-client (singleton):
+			- Nimiavaruudet
+			- Ylätason operaatiot
+			- DTO:t
+			- DTO:n määrittelemät operaatiot
+			- Enumeraatiot
+			- Virhekäsittely
+		- React:
+			- Vakiot
+			- Valmiskomponentit
+			- Layoutit
+			- Kontekstit
+			- Hookit
+			- Tyylit
+			- Helpperit
+			- Testit
+			- Globaalit kontekstit (istunto yms.)
+				- Istunnon tarkistus tai haku palvelimelta / selailmen säilöstä
+					- Kirjautuminen
+					- Reititin:
+						- Navigaatiopalkki (linkit, uloskirjautuminen)
+						- Sisäinen URL:
+							- Tunnisteen poimiminen osoitteesta
+							- Tietojen asynkroninen haku/tallennus (DTO):
+								- useEffect/useState
+								- Discriminated unions
+							- Kenttien nimiin perustuva lomakemanageri (DTO -> uudelleenalustus):
+								- Asettelut:
+									- Kortit
+										- Kentät (yhteys lomakemanageriin kontekstin kautta):
+											- Huomautukset
+									- Toiminnot
+										- Lomakenavigaatio (ankkurit)
+										- Huomautukset
+										- Painikkeet

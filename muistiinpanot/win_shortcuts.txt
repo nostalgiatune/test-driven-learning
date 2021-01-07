@@ -1,0 +1,7 @@
+- Windows shortcuts:
+  - WIN + e (explorer)
+  - WIN + arrow (move/resize window)
+  - Alt + shift (switch window)
+  - WIN + space (language)
+  - WIN + d (desktop)
+  - Ctrl + L (clear bar)

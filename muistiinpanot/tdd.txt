@@ -1,0 +1,27 @@
+Testaus:
+	- TODO TDD
+	- Testauspyramidi:
+		- käyttöliittymätestit (kattavia, hitaita, epävarmoja, kalliita): "kymmenys"
+		- integraatiotestit (kompromissi): "kolmannes"
+		- yksikkötestit (pistemäisiä, nopeita, varmoja, halpoja): "puolet"
+	- Regressio: Toteutuksen havainnoitava toiminnallisuus on muuttunut
+	- Regressiotesti:
+		- Koodiin kohdistuessa muutoksia toiminnallisuus ei muutu hallitsemattomasti
+		- Suoritettava aina kun koodia muutetaan
+	- Yksikkötesti:
+		- Testataan rajapinnan lupaaman toiminnallisuuden toteutumista ilman ulkopuolista vaikutusta tai riippuvuutta
+		- Korvataan riippuvuudet mock-rajapinnoilla
+		- Testataan kelvolla ja epäkelvolla syötteellä
+		- Työkalu hallitsemattoman regression välttämiseen sekä refaktorointiin
+	- Testit pitää verifioida oikeellisiksi
+	- Regressiotestit:
+		- Staattinen analyysi
+		- Yksikkötestit
+		- Integraatiotestit
+		- Käyttöliittymätestit
+		- Rajapintatestit
+		- Läpimenotestit (e2e)
+	- Ei-toiminnalliset testit:
+		- Suorituskykytestaus (performance)
+		- Kuormistustestaus (load)
+		- Tietoturvatestaus (security)

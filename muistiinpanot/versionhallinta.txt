@@ -1,0 +1,15 @@
+- Versionhallinta:
+	- Revisio
+	- Commit messages
+	- Feature-branchit
+	- Feature-togglet
+	- Merge Request (koodikatselmointi)
+	- Merge, Rebase, Fast Forward
+	- Tagit
+	- Artefaktit
+	- Semantic Versioning
+	- Julkaisukandidaatit (RC)
+	- Koodin jäädytys (code freeze)
+	- Releasointi
+	- Release train?
+	- Jatkuva integraatio

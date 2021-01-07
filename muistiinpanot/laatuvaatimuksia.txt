@@ -1,0 +1,60 @@
+- Arkkitehtonisia laatuvaatimusratkaisuja:
+
+	Skaalautuvuus:
+		- Tilattomat palvelut
+		- Vaakatason hajautus (kuormanjako)
+		- Välimuistipalvelut
+		- Resilienssi
+			
+	Luotettavuus:
+		- Transaktiot (ACID)
+		- Syötteiden tarkistus
+		- Idempotentit toiminteet
+		
+	Saatavuus:
+		- Eventual Consistency (BASE)
+			
+	Tietoturvallisuus:
+	    - CIA:
+		  - luottamuksellisuus:
+		    - todennus
+			- valtuutus
+			- salaus
+		  - eheys
+		    - kryptografiset tiivisteet
+			- auditointilokitus
+			- escapointi
+			- fail-fast -arkkitehtuuri
+		  - saatavuus
+			- verkon suojaus
+		    - avaintenhallinta
+			- varmuuskopiointi
+			
+	Läpinäkyvyys:
+		- Sovelluslokit
+		- Sanomalokit
+		- Korrelaatiotunnisteet
+		- Monitorointirajapinnat
+			
+	Hallittavuus:
+		- Orkestraatio
+		- Hallintarajapinnat
+		- Tilattomuus
+		- Kertakäyttöisyys
+		- Nopea käynnistys
+		- Konfiguraation eriyttäminen
+			
+	Kehitettävyys:
+		- Puhdas koodi
+		- Koneellisesti pakotetut koodauskäytännöt
+		- Dokumentointi (funktio, luokka, kirjasto, palvelu)
+		- Riippuvuuksien hallinta ja ylläpito
+			
+	Testattavuus:
+		- TDD
+		- Kapselointi
+			
+	Käytettävyys:
+		- Saavutettavuus
+		- Käyttäjäkokemus (UX)
+		- API-suunnittelu

@@ -1,0 +1,16 @@
+Arkkitehtuurikuvaus:
+	- Käyttötapaukset
+	- Prosessit
+	- Komponentit
+	- Liittymät
+	- Kokonaisarkkitehtuuri:
+		- Ulkoiset rajapinnat
+		- Sisäiset rajapinnat
+		- Laatuvaatimukset
+		- Tuotevalinnat
+		- Suunnittelurajoitteet
+	- Hajautusarkkitehtuuri
+	- Integraatioarkkitehtuuri
+	- Informaatioarkkitehtuuri
+	- Tietoturva-arkkitehtuuri
+	- Ohjelmistoarkkitehtuuri

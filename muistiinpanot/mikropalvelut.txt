@@ -1,0 +1,22 @@
+- Mikropalvelut:
+	- Mitä:
+		- Toteuttava kohdealueen liiketoimintapalveluita
+		- Itsenäisesti kehitettäviä ja ylläpidettäviä
+		- Kommunikoivat verkon yli API-rajapinnoilla
+	- Hyödyt:
+		- Autonimiset tiimit
+		- Skaalautuvuus
+		- Vikasietoisuus
+		- Refaktoroitavuus
+		- Uudelleenkirjoitettavuus
+		- Teknologiariippumattomuus
+		- Toimitettavuus
+		- ...
+	- Haitat:
+		- Vaikeasti hallittava kokonaisuus
+		- Vaikeasti testattavia
+		- Tiukemmat arkkitehtuurivaatimukset
+		- Enemmän häiriöpinta-alaa
+		- Hajautetun datan haasteet
+		- Kohdealueen oikeat rajat on vaikea löytää
+		- ...

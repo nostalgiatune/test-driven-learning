@@ -1,0 +1,13 @@
+monorepo:
+- atomiset commitit ja merge requestit (synkronoidut kehitysversiot)
+- "commit kuvaa koko maailman"
+- suoraviivaisempi riippuvuuksienhallinta
+- laaja refaktorointi / helpot isot muutokset
+- sidotut versionumerot
+- hidas kehittäjäkokemus ja build (työkaluin korjattavissa)
+- jaettu omistajuus / ei pääsynhallintaa
+- yksi tai useampi artefakti
+- testit kulkevat käsi kädessä (itsensä testaavat buildit ovat CI:n ja agilen ytimessä)
+- trunk-based development sointuu feature-brancheja paremmin
+- BE ja FE erottaminen luo virhealttiin integraatiopisteen kehittäjien välille - yhdistäminen rakentaa siltoja
+- BE ja FE tekee samat tyot (validoinnit) -> erillistava ajattelu on keinotekoinen ja johtaa informaatiosiiloihin

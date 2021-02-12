@@ -1,0 +1,127 @@
+DDL:
+- CREATE TABLE
+- CREATE INDEX
+- COMMENT
+
+DML:
+
+Eheysrajoitteet:
+- PRIMARY KEY
+- FOREIGN KEY
+- UNIQUE
+- NOT NULL / DEFAULT
+- CHECK <ehtolause>
+
+Valintalauseet:
+- <funktio>()
+- () -- alikysely
+- AS -- alias
+- OVER ([PARTITION BY] [ORDER BY]) -- ikkunafunktio
+- CASE
+- DISTINCT (kolumni tai kombinaatio)
+- UNION [ALL] (poista/salli duplikaatit)
+- ORDER BY [ASC | DESC]
+- GROUP BY -- koostetta varten
+
+Ehtolauseet:
+- WHERE, AND, OR, IS, NOT, BETWEEN, IN, LIKE
+- HAVING <koostefunktio>
+
+Alikyselyt:
+- WITH -- nimetty alikysely
+- () -- anonyymi alikysely
+
+Liitokset:
+- INNER JOIN
+- LEFT OUTER JOIN
+- RIGHT OUTER JOIN
+- FULL OUTER JOIN
+
+Koostefunktiot:
+- COUNT
+- SUM
+- AVG
+- MIN / MAX
+
+Merkkijonofunktiot:
+- LENGTH
+- CONCAT
+- TRANSLATE
+- UPPER / LOWER
+- INSTR
+- INITCAP
+- TRIM
+
+Numeeriset funktiot:
+- ABS
+- ROUND
+- FLOOR / CEIL
+- SIGN
+- MOD
+
+Aikafunktio:
+- SYSTIMESTAMP / SYSDATE
+- EXTRACT
+- TO_DATE / TO_CHAR
+- TRUNC
+
+Yleiset funktiot:
+- COALESCE
+- GREATEST / LEAST
+- CAST
+
+Ikkunafunktiot (analyyttiset funktiot):
+- Laskee jokaiselle tulostaulun riville muista riveist‰ riippuvan arvon
+- RANK / DENSE RANK OVER ([PARTITION BY] ORDER BY)
+- ROW_NUMBER() OVER ([PARTITION BY] ORDER BY)
+- FIRST_VALUE / LAST_VALUE [IGNORE|RESPECT] NULLS (jarestetyn joukon eka/vika rivi)
+- LAG / LEAD (edellisen/seuraavan rivin arvo)
+- NTILE(n) OVER (ORDER BY) -- jaa n-kokoisiin ryhmiin
+
+Top-N Queries:
+- FETCH FIRST N ROWS ONLY -- koska rownum-ehto suoritetaan ennen jarestamista!
+
+rekursiiviset haut:
+- TODO
+
+indeksit:
+- p‰‰avain indeksoidaan automaattisesti
+- toteutettu esim. hakupuuna
+- nopeuttaa tiedon hakua
+- vie tilaa ja hidastaa tiedon p‰ivityst‰
+
+Denormalisointi:
+- raportointi?
+- CQRS?
+
+Kyselysuunnitelmat:
+- EXPLAIN
+
+Triggerit:
+- Ep‰kontekstuaalisia
+- Implisiittisi‰
+- Generoi tapahtuma-olioita atomisesti
+
+Lukituksen seuranta: / best effort:
+1. insertoi lukkorivi (commit)
+2. varaa lukko
+3. suorita operaatio
+4. vapauta lukko
+5. poista lukkorivi (commit)
+
+Transaktiotasot (ACID):
+- Read Uncommited (n‰kee keskener‰isen transaktion muutokset)
+- Read Commited (n‰kee valmiiden transaktioiden muutokset)
+- Repeatable Read (ei n‰e valmiiden transaktioiden muutoksia)
+- Serializable (transaktiot suoritetaan sarjassa)
+
+Kantaproseduurit:
++ tehokkuus (liitostaulut)
++ datan eheys jaetussa kannassa
++ muutosten nopea vienti
++ DDD:ssa joinit suoritetaan sovellustasolla -
+- laskennan tehokkuus (laskennan kuormanjako)
+- proseduraalisuus (yllapidettavyys)
+- testattavuus (sisainen laatu)
+- ep‰koherentti toteutus
+- vaikea versioida

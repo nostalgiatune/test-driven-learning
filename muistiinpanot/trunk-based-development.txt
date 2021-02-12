@@ -1,0 +1,20 @@
+trunk-based development:
+- laadukkaita committeja viedään suoraan masteriin
+- laatupaine
+- pariohjelmointi (reaaliaikainen katselmointi)
+- automaatiotestaus (TDD)
+- master on aina tuotantovalmis (branch by abstraction)
+- nopeampi integrointi ja palautesilmukka, vähemmän mergekonflikteja
+- vähentää informaatiosiiloja
+- commitit ovat pieniä testit läpäiseviä inkrementtejä, commit messaget kuvaavat niiden liiketoiminta-arvon (xxx, jotta...)
+- lakmus-testi tiimin ja menetelmän tehokkuudesta: onko tiimin kokonaistehokkuus asetettu yksilöllisen tehokkuuden edelle (Lean)
+- vaatii asiantuntevan senior-tiimin
+
+branch by abstraction:
+- wip-ominaisuuksia tuotantokoodissa
+- luodaan korvattavalle/puuttuvalle koodille abstraktio
+- muutetaan riippuvainen koodi vaiheittain kayttamaan abstraktiota
+- muutetaan abstraktion takainen koodi
+- tarvittaessa puretaan abstraktio
+
+https://medium.com/@mattia.battiston/why-i-love-trunk-based-development-641fcf0b94a0

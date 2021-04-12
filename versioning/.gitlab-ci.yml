@@ -1,0 +1,80 @@
+# TODO: TT-234
+# As an architect I want to reuse GitLab CI pipeline definitions and tooling
+
+variables:
+  LOCAL_IMAGE_AND_TAG: "${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}:${CI_COMMIT_SHORT_SHA}"
+  ACR_IMAGE: "${ACR_NAME}.azurecr.io/${CI_PROJECT_NAME}"
+  GITLAB_HOST: "gitlab.siilicloud.com"
+  VERSION_BUMP_MSG: "[version] Automatic version bump"
+
+# Avoid duplicate pipelines
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - when: always
+    
+stages:
+  - build
+  - semver
+  - tag
+  - push
+  - clean
+  
+# Reusable configuration fragments
+######################################################################################
+
+.versioning:
+  rules:
+    - if: '$CI_COMMIT_TAG'
+      when: never
+    - if: '$CI_COMMIT_MESSAGE =~ /\[version\]/'
+      when: never
+    - if: '$CI_COMMIT_BRANCH == "master"'
+  cache: {}
+
+.pushing:
+  rules:
+    - if: '$CI_COMMIT_TAG'
+  cache: {}
+    
+######################################################################################
+
+docker-build:
+  stage: build
+  script:
+    - 'docker build -t ${LOCAL_IMAGE_AND_TAG} .'
+  cache: {}
+
+bump-version:
+  stage: semver
+  before_script:
+    - . version-info/setup-ssh.sh
+    - pip3 install semver
+  script:
+    - version-info/bump-version.py
+  extends: .versioning
+    
+docker-tag:
+  stage: tag
+  script:
+    - 'echo "Version tag: ${CI_COMMIT_TAG}"'
+    - 'docker tag ${LOCAL_IMAGE_AND_TAG} ${ACR_IMAGE}:latest'
+    - 'docker tag ${LOCAL_IMAGE_AND_TAG} ${ACR_IMAGE}:${CI_COMMIT_TAG}'
+  extends: .pushing
+    
+docker-push:
+  stage: push
+  before_script:
+    - 'az login --service-principal -u "${AZURE_PRINCIPAL}" --password "${AZURE_PASSWORD}" --tenant "${AZURE_TENANT}"'
+    - 'az acr login --name ${ACR_NAME}'
+  script:
+    - 'docker push ${ACR_IMAGE}:latest'
+    - 'docker push ${ACR_IMAGE}:${CI_COMMIT_TAG}'
+  extends: .pushing
+
+docker-rmi:
+  stage: clean
+  script:
+    - 'docker rmi ${LOCAL_IMAGE_AND_TAG}'
+    - 'docker images'

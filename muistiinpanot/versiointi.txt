@@ -1,0 +1,46 @@
+julkaisuversio:
+- tuoteversio loppukäyttäjiä varten (esim. kalenteri/koodinimi)
+- erillismitallinen / erillisesti hallinnoitu tekniseen versioon nähden
+- kertoo asiakkaalle selkokielellä, mitä tulee ulos (esim. adobe creative cloud)
+- koostaa julkaistavat komponentit teknisine versioineen
+- oltava johdettavissa komponenttien teknisiin versioihin
+
+tekninen versio (semVer):
+- kehittäjiä ja riippuvuuksia varten
+- suure muutoksen vaikutukselle (kommunikoi riskiä)
+- muutoslokin generoinnin tukena
+- versionumerojen määräytyminen riippumatonta komponenttien välillä
+- todennettavissa oleva prosessi suhteessa versionhallinan hasheihin
+
+CI:
+- integroi päälinjaan vähintään päivittäin (trunk-based development)
+- korkein prioriteetti on pitää päälinja vakaana (voi hajota, mutta korjattava ensisijaisesti. harkitse hälytystä)
+- mitä suurempi kiusaus haarauttaa, sitä suuremmalla syyllä ei tulisi haarauttaa (johtaa kuolleeseen kulmaan)
+- automatisoitu yksikkö- savu- ja integraatiotestaus (yksikkötestit ei suojele käyttötapausten regressioilta)
+- TDD tukee pakollisten automaatiotestien toteuttamista positiivisin arkkitehtuurivaikutuksin
+- keskeneräisen työn integrointi:  inkrementaalisuus, branch by abstraction, feature togglet, arkkitehtuuri
+- sosiaalinen menetelmä, ei työkalu (kommunikaatio, läpinäkyvyys, ketteryys)
+- jatkuvan toimituksen ja refaktoroinnin perusta
+
+CD:
+- lähtökohtana CI:n mahdollistama jatkuva julkaisuvalmius
+- buildien ja asennusten täytyy olla identtisesti toistettavissa
+- konfiguraatiot, referenssidata, ympäristömääritykset, asennusskriptit yms. versionhallinnassa
+- testi- ja tuotantoasennus samalla automatiikalla (minimoi virheet, testaa julkaisuprosessin)
+- vaiheistettu julkaisuputki (commit-vaihe, savutestaus, integraatiotestaus, manuaalitoimenpiteet jne.)
+- logiikka eriytetty CI-putkesta (pakettivaraston takana)
+- tuotantoonvienti napin päässä
+
+pakettivarasto:
+- välittää paketit CI/CD-putken vaiheelta toiselle (yksi totuus)
+- paketin on sisällettävä CI-palvelimen automaattisesti generoima build-label (hash)
+- täytyy olla siivousajolla tyhjennettävissä ja sisältö uudelleenrakennettavissa identtisesti (tilansäästö)
+- julkaisuversiot kannattaa säilöä ikuisesti rollbackeja/virheenselvitystä varten
+
+komponenttien väliset riippuvuudet (DAG):
+- komponenteilla voi olla erilliset CI-putket
+- paketit pusketaan pakettivarastoon commit-vaiheen jälkeen
+- alavirran heräte ylävirran paketin muutoksesta, rekursiivisesti
+- ei sallita syklisiä riippuvuuksia, jos väliriippuvuuden koonti epäonnistuu
+- paketit toimivat syötteenä integraatioputkelle, joka suorittaa läpimenotestit tuotannonkaltaisessa ympäristössä
+- integraatioputken tulos on oltava johdettavissa komponenttien koontiversiohin sekunneissa (build-label)

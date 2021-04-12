@@ -1,0 +1,78 @@
+angular:
+- framework ja kehitysalusta SPA-sovelluksille
+- typescript
+- komponentit
+- valmiskirjastot
+- kehitystyökalut
+
+Angular CLI:
+- build
+- serve (watch)
+- generate
+- lint
+- test (unit)
+- e2e
+
+devex:
+- angular generator
+
+kuratoidut kirjastot:
+- Router (lazy, nested etc.)
+- Forms (state and validation)
+- Schematics (scaffolding)
+- HttpClient
+- Animations
+- PWA
+
+komponentit:
+- @Component() dekoraattori
+- HTML sapluuna
+- tyylit
+- {{}} (interpolaatio)
+
+servicet:
+- jaettu/globaali tila
+
+luokka
+- komponentin lokaali tila
+
+bindaus:
+- [] property binding
+- () event binding
+- @Input
+- @Output / EventEmitter
+
+direktiivit:
+- *ngIf
+- *ngFor
+
+DI:
+- @Injectable
+- constructor injection (private)
+
+reititys:
+- RouterLink
+- app.module
+- ActivatedRoute (di)
+
+pipes:
+- transform data
+- currency
+- async
+
+lomakkeet:
+- FormBuilder
+- formGroup
+- ngSubmit
+- formControlName
+
+TODO:
+- testaus
+- mockaus
+- i18n
+- sass
+- styled components?
+- grid layout?
+- 12 factor?
+- globaali tila
+- docker
